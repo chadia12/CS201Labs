@@ -1,4 +1,10 @@
 package Lab3;
+/*
+Write a program that accepts a person’s weight and displays the number of calories the
+person needs in one day. A person needs 19 calories per pound of body weight, so the formula
+expressed in Java is
+calories = bodyWeight * 19;
+ */
 
 import java.util.Scanner;
 
