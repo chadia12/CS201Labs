@@ -7,7 +7,7 @@ public class EmployeeMyJava {
         Scanner input = new Scanner(System.in);
         final double BASIC_WAGE = 7.25;
         final double OVERTIME_WAGE = 1.5;
-        final  int BASIC_HOUR = 8;
+        final  int BASIC_HOUR = 40;
         System.out.println("enter hours you worked");
         int workHours = input.nextInt();
         System.out.println("Enter sales");
