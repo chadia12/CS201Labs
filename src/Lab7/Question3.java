@@ -1,3 +1,5 @@
+package Lab7;
+
 public class Question3 {
         public static void main(String[] args) {
             display();

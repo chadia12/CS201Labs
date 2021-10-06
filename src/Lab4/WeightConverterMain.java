@@ -1,3 +1,5 @@
+package Lab4;
+
 import Lab4.WeightConverter;
 
 public class WeightConverterMain {

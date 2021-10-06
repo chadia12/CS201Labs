@@ -1,3 +1,5 @@
+package Lab7;
+
 import java.util.Scanner;
 
 public class Question5 {
