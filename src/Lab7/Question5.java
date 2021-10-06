@@ -24,7 +24,7 @@ primeNumberBetween();
                     count =0;
 
                 }
-                count =0;
+                count = 0;
         }
         System.out.println(temp);
     }
