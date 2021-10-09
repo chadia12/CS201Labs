@@ -10,13 +10,14 @@ public class Question4 {
     public static void primeNumber() {
         Scanner input = new Scanner(System.in);
         int num;
-        int count = 0;
+
         do {
             System.out.println("Enter a number");
             num = input.nextInt();
             if (num < 1) {
                 break;
             }
+            int count = 0;
             for (int i = 1; i <= 100; i++) {
                 if (num % i == 0) {
                     count++;
