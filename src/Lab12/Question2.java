@@ -9,7 +9,7 @@ public class Question2 {
     }
     public static int smallest (int [] num, int index){
 
-        if(index==0)
+        if(index == 1)
             return num[0];
         else
 
