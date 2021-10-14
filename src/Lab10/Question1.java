@@ -1,51 +1,51 @@
 package Lab10;
-
-import java.util.Scanner;
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Question1 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        double[] temps = new double[365];
+        temps[1] = 100;
+        temps[100] = -20;
+        System.out.println("The coldest Temperature: " +getColdest(temps));
+        System.out.println("The hottest Temperature: " +getHottest(temps));
+        System.out.println("the difference of temperature: " +getDiff(temps));
+        System.out.println(getTemp(2,23,temps));
+    }
 
-        System.out.println("enter a number as month");
-        int month= input.nextInt();
-        System.out.println("enter a number as day");
-        int day = input.nextInt();
-        double[][] years = new double[month][day];
-        for (int i = 0; i < years[month].length; i++) {
-            for (int j = 0; j < years[i].length; j++) {
-                if(years[i][j] <0 || years[i][j] >12)
-                    month= input.nextInt();
-            }
+
+    public static double getHottest(double[] temps){
+        double hottest = Double.MIN_VALUE;
+        //logic
+        for(int i = 0; i < temps.length; i++){
+            if(temps[i] > hottest)
+                hottest = temps[i];
         }
-        double temp =years[0][0];
-        double max = temp;
-        for (int i = 0; i < years.length; i++) {
-            for (int j = 0; j < years[i].length; j++) {
-                if (years[i][j] > max)
-                    max = years[i][j];
-            }
+        return hottest;
+    }
 
+    public static double getColdest(double[] temps){
+        double coldest = Double.MAX_VALUE;
+        //logic
+        for(int i = 0; i < temps.length; i++){
+            if(temps[i] < coldest)
+                coldest = temps[i];
         }
-        System.out.println("the hottest: " + max);
-        double min = temp;
-        for (int i = 0; i < years.length; i++) {
-            for (int j = 0; j < years[i].length; j++) {
-                if (years[i][j] < min)
-                    min = years[i][j];
-            }
+        return coldest;
+    }
 
+    public static double getDiff(double[] temps){
+        return getHottest(temps) - getColdest(temps);
+    }
+
+    public static double getTemp(int month, int day, double[] temps){
+        try{
+            LocalDate date = LocalDate.of(Calendar.getInstance().get(Calendar.YEAR), month, day);
+            return temps[date.getDayOfYear() - 1];
+        }catch (Exception e){
+            return -1;
         }
-        System.out.println("the coldest is: " + min);
-        double sum = 0;
-
-        for (int i = 0; i < years.length; i++) {
-            for (int j = 0; j < years[i].length; j++) {
-                sum += years[i][j];
-            }
-            double average = sum /years[i].length;
-            System.out.println("The average of temperature is: " + average);
-        }
-
-
     }
 }
