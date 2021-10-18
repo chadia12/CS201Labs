@@ -9,7 +9,7 @@ public class Question3 {
     }
     public static int sumOfNumber(int []sumOfNum,int index){
 
-        if (index <= 0)
+        if (index == 0)
             return 0;
         else
             return sumOfNum[index-1] + sumOfNumber(sumOfNum,index-1);

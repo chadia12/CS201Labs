@@ -3,6 +3,7 @@ package Lab12;
 public class Question4 {
     public static void main(String[] args) {
        reverseString("chadia",0);
+        System.out.println("");
         reversStringOption("Hello");
 
     }
@@ -12,6 +13,7 @@ public class Question4 {
         else
             reverseString(sentence,i+1);
             System.out.print(sentence.charAt(i));
+
 
     }
     public static void reversStringOption(String  word){
